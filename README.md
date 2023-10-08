@@ -34,3 +34,5 @@ docker image prune
 ### can run the following command to check if there any vulnerabilities and recommendations regarding the Dockerfile 
 docker scout quickview
 ```
+
+[![Known Vulnerabilities](https://snyk.io/test/github/sharechiwai/docker-playground/badge.svg)]
