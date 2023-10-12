@@ -1,0 +1,9 @@
+version: '3'
+services:
+  dev-server:
+    build:
+      context: . # Use the current directory as the build context
+      dockerfile: Dockerfile # Specify the name of your Dockerfile
+    container_name: nginx-reactjs-fe # You can set a custom container name
+    ports:
+      - "3331:80" # Map port 80 in the container to the host
