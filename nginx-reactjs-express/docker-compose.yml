@@ -3,9 +3,18 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx-reverse-proxy
-    restart: always
+    #    restart: always
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
       - 443:443
+    networks:
+      my-network:
+    external_links:
+      - "nginx-reactjs-fe:dev-server"
+      - "nginx-reactjs-express-be:nodejs-app"
+networks:
+  my-network:
+    external:
+      name: my-network

@@ -7,3 +7,12 @@ services:
     container_name: nginx-reactjs-fe # You can set a custom container name
     ports:
       - "3331:80" # Map port 80 in the container to the host
+    networks:
+      my-network:
+        aliases:
+          - dev-server
+
+networks:
+  my-network:
+    external:
+      name: my-network

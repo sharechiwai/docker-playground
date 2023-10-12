@@ -8,7 +8,11 @@ services:
     ports:
       - "3333:3000" # Map the app's port to the host
     networks:
-      - my-network
+      my-network:
+        aliases:
+          - nodejs-app
 
 networks:
   my-network:
+    external:
+      name: my-network
