@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nodejs-app:
+    build:
+      context: . # Use the current directory as the build context
+      dockerfile: Dockerfile # Specify the name of your Dockerfile
+    container_name: nginx-reactjs-express-be # You can set a custom container name
+    ports:
+      - "3333:3000" # Map the app's port to the host
+    networks:
+      - my-network
+
+networks:
+  my-network:
