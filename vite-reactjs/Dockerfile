@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Start a new stage to create a smaller production-ready image
-FROM nginx:1.25.2-alpine-slim
+FROM nginx:1.25.3-alpine-slim
 
 # Copy the built files from the previous stage to the nginx web server directory
 COPY --from=builder /app/dist /usr/share/nginx/html
